@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/auto-insurance-quote/static/css/main.af6f17a3.chunk.css",
+    "main.js": "/auto-insurance-quote/static/js/main.825f6c61.chunk.js",
+    "main.js.map": "/auto-insurance-quote/static/js/main.825f6c61.chunk.js.map",
+    "runtime-main.js": "/auto-insurance-quote/static/js/runtime-main.097d9880.js",
+    "runtime-main.js.map": "/auto-insurance-quote/static/js/runtime-main.097d9880.js.map",
+    "static/js/2.be5fd41a.chunk.js": "/auto-insurance-quote/static/js/2.be5fd41a.chunk.js",
+    "static/js/2.be5fd41a.chunk.js.map": "/auto-insurance-quote/static/js/2.be5fd41a.chunk.js.map",
+    "index.html": "/auto-insurance-quote/index.html",
+    "precache-manifest.a460bcd96b44cf2f06f73d7be8e36791.js": "/auto-insurance-quote/precache-manifest.a460bcd96b44cf2f06f73d7be8e36791.js",
+    "service-worker.js": "/auto-insurance-quote/service-worker.js",
+    "static/css/main.af6f17a3.chunk.css.map": "/auto-insurance-quote/static/css/main.af6f17a3.chunk.css.map",
+    "static/js/2.be5fd41a.chunk.js.LICENSE.txt": "/auto-insurance-quote/static/js/2.be5fd41a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.097d9880.js",
+    "static/js/2.be5fd41a.chunk.js",
+    "static/css/main.af6f17a3.chunk.css",
+    "static/js/main.825f6c61.chunk.js"
+  ]
+}
