@@ -51,7 +51,7 @@ const Error = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Form = () => {
+const Form = ({ setSummary }) => {
   const [dataForm, setDataForm] = useState({
     brand: '',
     year: '',
@@ -108,6 +108,10 @@ const Form = () => {
     console.log(result);
 
     // Total
+    setSummary({
+      quotation: result,
+      data: dataForm,
+    });
   };
 
   return (

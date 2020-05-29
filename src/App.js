@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Header from './components/Header';
 import styled from '@emotion/styled';
 import Form from './components/Form';
+import Summary from './components/Summary';
+import Result from './components/Result';
 
 const Container = styled.div`
   max-width: 600px;
@@ -14,12 +16,25 @@ const ContainerForm = styled.div`
 `;
 
 function App() {
+  const [summary, setSummary] = useState({
+    quotation: 0,
+    data: {
+      brand: '',
+      year: '',
+      plan: '',
+    },
+  });
+
+  const { data, quotation } = summary;
+
   return (
     <Fragment>
       <Container>
         <Header title="Insurance Quote" />
         <ContainerForm>
-          <Form />
+          <Form setSummary={setSummary} />
+          <Summary data={data} />
+          <Result quotation={quotation} />
         </ContainerForm>
       </Container>
     </Fragment>
