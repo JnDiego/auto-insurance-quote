@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { getYearDifference, calculateBrand, getPlanIncrease } from '../helper';
 
 const Field = styled.div`
   display: flex;
@@ -82,20 +83,29 @@ const Form = () => {
 
     setError(false);
 
+    // Base inicial de seguro (2000)
+    let result = 2000;
+
     //Obtener la diferencia de años.
+    const yearDifference = getYearDifference(year);
 
     //Por cada año hay que restar el 3%
+    result -= (yearDifference * 3 * result) / 100;
 
     /* Incremento por marca a su valor actual
         Americano 15 %
         Asiatico 5 %
         Europeo 30%
     */
+    result = calculateBrand(brand) * result;
 
     /* Incremento por plan a su valor actual
         Básico 20 %
         Completo 50 %
     */
+    const planIncrease = getPlanIncrease(plan);
+    result = parseFloat(planIncrease * result).toFixed(2);
+    console.log(result);
 
     // Total
   };
