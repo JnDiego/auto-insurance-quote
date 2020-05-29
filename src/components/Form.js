@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 import { getYearDifference, calculateBrand, getPlanIncrease } from '../helper';
 
 const Field = styled.div`
@@ -51,7 +52,7 @@ const Error = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Form = ({ setSummary }) => {
+const Form = ({ setSummary, setLoading }) => {
   const [dataForm, setDataForm] = useState({
     brand: '',
     year: '',
@@ -105,13 +106,17 @@ const Form = ({ setSummary }) => {
     */
     const planIncrease = getPlanIncrease(plan);
     result = parseFloat(planIncrease * result).toFixed(2);
-    console.log(result);
 
-    // Total
-    setSummary({
-      quotation: result,
-      data: dataForm,
-    });
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      // Total
+      setSummary({
+        quotation: Number(result),
+        data: dataForm,
+      });
+    }, 3000);
   };
 
   return (
@@ -154,6 +159,11 @@ const Form = ({ setSummary }) => {
       <Button type="submit">Quote</Button>
     </form>
   );
+};
+
+Form.propTypes = {
+  setSummary: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
 };
 
 export default Form;
